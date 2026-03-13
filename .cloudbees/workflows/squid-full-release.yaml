@@ -40,16 +40,16 @@ metadata:
 
 jobs:
   squid-auth:
-    if: ${{ fromJSON(inputs.manifest)['squid-auth'] }}
+    if: ${{ fromJSON(inputs.manifest)['squid-auth'].deploy && fromJSON(inputs.manifest)['squid-auth']['stacksdemo/squid-auth'].deploy }}
     uses: github.com/stacksphereio/core-workflows/.cloudbees/workflows/component-deploy.yaml@main
     with:
       component_name: squid-auth
-      version: ${{ fromJSON(inputs.manifest)['squid-auth'].version }}
+      version: ${{ fromJSON(inputs.manifest)['squid-auth']['stacksdemo/squid-auth'].version }}
       environment: ${{ inputs.environment }}
       stack_name: squid
       docker_repo: stacksdemo/squid-auth
-      artifact_id: ${{ fromJSON(inputs.manifest)['squid-auth'].artifactId }}
-      commit_sha: ${{ fromJSON(inputs.manifest)['squid-auth'].digest }}
+      artifact_id: ${{ fromJSON(inputs.manifest)['squid-auth']['stacksdemo/squid-auth'].id }}
+      commit_sha: ${{ fromJSON(inputs.manifest)['squid-auth']['stacksdemo/squid-auth'].digest }}
       database_mode: postgres
       enable_liquibase: "true"
       feature_flags_enabled: true
@@ -57,16 +57,16 @@ jobs:
     vars: inherit
 
   squid-ui:
-    if: ${{ fromJSON(inputs.manifest)['squid-ui'] }}
+    if: ${{ fromJSON(inputs.manifest)['squid-ui'].deploy && fromJSON(inputs.manifest)['squid-ui']['stacksdemo/squid-ui'].deploy }}
     uses: github.com/stacksphereio/core-workflows/.cloudbees/workflows/component-deploy.yaml@main
     with:
       component_name: squid-ui
-      version: ${{ fromJSON(inputs.manifest)['squid-ui'].version }}
+      version: ${{ fromJSON(inputs.manifest)['squid-ui']['stacksdemo/squid-ui'].version }}
       environment: ${{ inputs.environment }}
       stack_name: squid
       docker_repo: stacksdemo/squid-ui
-      artifact_id: ${{ fromJSON(inputs.manifest)['squid-ui'].artifactId }}
-      commit_sha: ${{ fromJSON(inputs.manifest)['squid-ui'].digest }}
+      artifact_id: ${{ fromJSON(inputs.manifest)['squid-ui']['stacksdemo/squid-ui'].id }}
+      commit_sha: ${{ fromJSON(inputs.manifest)['squid-ui']['stacksdemo/squid-ui'].digest }}
       database_mode: no-database
       enable_liquibase: "false"
       feature_flags_enabled: true
@@ -77,16 +77,16 @@ jobs:
     vars: inherit
 
   squid-reef-asia:
-    if: ${{ fromJSON(inputs.manifest)['squid-reef-asia'] }}
+    if: ${{ fromJSON(inputs.manifest)['squid-reef-asia'].deploy && fromJSON(inputs.manifest)['squid-reef-asia']['stacksdemo/squid-reef-asia'].deploy }}
     uses: github.com/stacksphereio/core-workflows/.cloudbees/workflows/component-deploy.yaml@main
     with:
       component_name: squid-reef-asia
-      version: ${{ fromJSON(inputs.manifest)['squid-reef-asia'].version }}
+      version: ${{ fromJSON(inputs.manifest)['squid-reef-asia']['stacksdemo/squid-reef-asia'].version }}
       environment: ${{ inputs.environment }}
       stack_name: squid
       docker_repo: stacksdemo/squid-reef-asia
-      artifact_id: ${{ fromJSON(inputs.manifest)['squid-reef-asia'].artifactId }}
-      commit_sha: ${{ fromJSON(inputs.manifest)['squid-reef-asia'].digest }}
+      artifact_id: ${{ fromJSON(inputs.manifest)['squid-reef-asia']['stacksdemo/squid-reef-asia'].id }}
+      commit_sha: ${{ fromJSON(inputs.manifest)['squid-reef-asia']['stacksdemo/squid-reef-asia'].digest }}
       database_mode: no-database
       enable_liquibase: "false"
       feature_flags_enabled: true
@@ -94,16 +94,16 @@ jobs:
     vars: inherit
 
   squid-reef-eu:
-    if: ${{ fromJSON(inputs.manifest)['squid-reef-eu'] }}
+    if: ${{ fromJSON(inputs.manifest)['squid-reef-eu'].deploy && fromJSON(inputs.manifest)['squid-reef-eu']['stacksdemo/squid-reef-eu'].deploy }}
     uses: github.com/stacksphereio/core-workflows/.cloudbees/workflows/component-deploy.yaml@main
     with:
       component_name: squid-reef-eu
-      version: ${{ fromJSON(inputs.manifest)['squid-reef-eu'].version }}
+      version: ${{ fromJSON(inputs.manifest)['squid-reef-eu']['stacksdemo/squid-reef-eu'].version }}
       environment: ${{ inputs.environment }}
       stack_name: squid
       docker_repo: stacksdemo/squid-reef-eu
-      artifact_id: ${{ fromJSON(inputs.manifest)['squid-reef-eu'].artifactId }}
-      commit_sha: ${{ fromJSON(inputs.manifest)['squid-reef-eu'].digest }}
+      artifact_id: ${{ fromJSON(inputs.manifest)['squid-reef-eu']['stacksdemo/squid-reef-eu'].id }}
+      commit_sha: ${{ fromJSON(inputs.manifest)['squid-reef-eu']['stacksdemo/squid-reef-eu'].digest }}
       database_mode: no-database
       enable_liquibase: "false"
       feature_flags_enabled: true
@@ -111,16 +111,16 @@ jobs:
     vars: inherit
 
   squid-feeds:
-    if: ${{ fromJSON(inputs.manifest)['squid-feeds'] }}
+    if: ${{ fromJSON(inputs.manifest)['squid-feeds'].deploy && fromJSON(inputs.manifest)['squid-feeds']['stacksdemo/squid-feeds'].deploy }}
     uses: github.com/stacksphereio/core-workflows/.cloudbees/workflows/component-deploy.yaml@main
     with:
       component_name: squid-feeds
-      version: ${{ fromJSON(inputs.manifest)['squid-feeds'].version }}
+      version: ${{ fromJSON(inputs.manifest)['squid-feeds']['stacksdemo/squid-feeds'].version }}
       environment: ${{ inputs.environment }}
       stack_name: squid
       docker_repo: stacksdemo/squid-feeds
-      artifact_id: ${{ fromJSON(inputs.manifest)['squid-feeds'].artifactId }}
-      commit_sha: ${{ fromJSON(inputs.manifest)['squid-feeds'].digest }}
+      artifact_id: ${{ fromJSON(inputs.manifest)['squid-feeds']['stacksdemo/squid-feeds'].id }}
+      commit_sha: ${{ fromJSON(inputs.manifest)['squid-feeds']['stacksdemo/squid-feeds'].digest }}
       database_mode: no-database
       enable_liquibase: "false"
       feature_flags_enabled: true
@@ -128,16 +128,16 @@ jobs:
     vars: inherit
 
   squid-reef-na:
-    if: ${{ fromJSON(inputs.manifest)['squid-reef-na'] }}
+    if: ${{ fromJSON(inputs.manifest)['squid-reef-na'].deploy && fromJSON(inputs.manifest)['squid-reef-na']['stacksdemo/squid-reef-na'].deploy }}
     uses: github.com/stacksphereio/core-workflows/.cloudbees/workflows/component-deploy.yaml@main
     with:
       component_name: squid-reef-na
-      version: ${{ fromJSON(inputs.manifest)['squid-reef-na'].version }}
+      version: ${{ fromJSON(inputs.manifest)['squid-reef-na']['stacksdemo/squid-reef-na'].version }}
       environment: ${{ inputs.environment }}
       stack_name: squid
       docker_repo: stacksdemo/squid-reef-na
-      artifact_id: ${{ fromJSON(inputs.manifest)['squid-reef-na'].artifactId }}
-      commit_sha: ${{ fromJSON(inputs.manifest)['squid-reef-na'].digest }}
+      artifact_id: ${{ fromJSON(inputs.manifest)['squid-reef-na']['stacksdemo/squid-reef-na'].id }}
+      commit_sha: ${{ fromJSON(inputs.manifest)['squid-reef-na']['stacksdemo/squid-reef-na'].digest }}
       database_mode: no-database
       enable_liquibase: "false"
       feature_flags_enabled: true
@@ -145,16 +145,16 @@ jobs:
     vars: inherit
 
   squid-assets:
-    if: ${{ fromJSON(inputs.manifest)['squid-assets'] }}
+    if: ${{ fromJSON(inputs.manifest)['squid-assets'].deploy && fromJSON(inputs.manifest)['squid-assets']['stacksdemo/squid-assets'].deploy }}
     uses: github.com/stacksphereio/core-workflows/.cloudbees/workflows/component-deploy.yaml@main
     with:
       component_name: squid-assets
-      version: ${{ fromJSON(inputs.manifest)['squid-assets'].version }}
+      version: ${{ fromJSON(inputs.manifest)['squid-assets']['stacksdemo/squid-assets'].version }}
       environment: ${{ inputs.environment }}
       stack_name: squid
       docker_repo: stacksdemo/squid-assets
-      artifact_id: ${{ fromJSON(inputs.manifest)['squid-assets'].artifactId }}
-      commit_sha: ${{ fromJSON(inputs.manifest)['squid-assets'].digest }}
+      artifact_id: ${{ fromJSON(inputs.manifest)['squid-assets']['stacksdemo/squid-assets'].id }}
+      commit_sha: ${{ fromJSON(inputs.manifest)['squid-assets']['stacksdemo/squid-assets'].digest }}
       database_mode: no-database
       enable_liquibase: "false"
       feature_flags_enabled: true
@@ -162,16 +162,16 @@ jobs:
     vars: inherit
 
   squid-catalog:
-    if: ${{ fromJSON(inputs.manifest)['squid-catalog'] }}
+    if: ${{ fromJSON(inputs.manifest)['squid-catalog'].deploy && fromJSON(inputs.manifest)['squid-catalog']['stacksdemo/squid-catalog'].deploy }}
     uses: github.com/stacksphereio/core-workflows/.cloudbees/workflows/component-deploy.yaml@main
     with:
       component_name: squid-catalog
-      version: ${{ fromJSON(inputs.manifest)['squid-catalog'].version }}
+      version: ${{ fromJSON(inputs.manifest)['squid-catalog']['stacksdemo/squid-catalog'].version }}
       environment: ${{ inputs.environment }}
       stack_name: squid
       docker_repo: stacksdemo/squid-catalog
-      artifact_id: ${{ fromJSON(inputs.manifest)['squid-catalog'].artifactId }}
-      commit_sha: ${{ fromJSON(inputs.manifest)['squid-catalog'].digest }}
+      artifact_id: ${{ fromJSON(inputs.manifest)['squid-catalog']['stacksdemo/squid-catalog'].id }}
+      commit_sha: ${{ fromJSON(inputs.manifest)['squid-catalog']['stacksdemo/squid-catalog'].digest }}
       database_mode: no-database
       enable_liquibase: "false"
       feature_flags_enabled: true
