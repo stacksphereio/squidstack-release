@@ -41,7 +41,7 @@ metadata:
 jobs:
   squid-auth:
     if: ${{ fromJSON(inputs.manifest)['squid-auth'].deploy && fromJSON(inputs.manifest)['squid-auth']['stacksdemo/squid-auth'].deploy }}
-    uses: github.com/stacksphereio/core-workflows/.cloudbees/workflows/component-deploy.yaml@main
+    uses: github.com/stacksphereio/core-workflows/.cloudbees/workflows/component-deploy.yaml@feature/squidstack-release-implementation
     with:
       component_name: squid-auth
       version: ${{ fromJSON(inputs.manifest)['squid-auth']['stacksdemo/squid-auth'].version }}
@@ -58,7 +58,7 @@ jobs:
 
   squid-ui:
     if: ${{ fromJSON(inputs.manifest)['squid-ui'].deploy && fromJSON(inputs.manifest)['squid-ui']['stacksdemo/squid-ui'].deploy }}
-    uses: github.com/stacksphereio/core-workflows/.cloudbees/workflows/component-deploy.yaml@main
+    uses: github.com/stacksphereio/core-workflows/.cloudbees/workflows/component-deploy.yaml@feature/squidstack-release-implementation
     with:
       component_name: squid-ui
       version: ${{ fromJSON(inputs.manifest)['squid-ui']['stacksdemo/squid-ui'].version }}
@@ -78,7 +78,7 @@ jobs:
 
   squid-reef-asia:
     if: ${{ fromJSON(inputs.manifest)['squid-reef-asia'].deploy && fromJSON(inputs.manifest)['squid-reef-asia']['stacksdemo/squid-reef-asia'].deploy }}
-    uses: github.com/stacksphereio/core-workflows/.cloudbees/workflows/component-deploy.yaml@main
+    uses: github.com/stacksphereio/core-workflows/.cloudbees/workflows/component-deploy.yaml@feature/squidstack-release-implementation
     with:
       component_name: squid-reef-asia
       version: ${{ fromJSON(inputs.manifest)['squid-reef-asia']['stacksdemo/squid-reef-asia'].version }}
@@ -95,7 +95,7 @@ jobs:
 
   squid-reef-eu:
     if: ${{ fromJSON(inputs.manifest)['squid-reef-eu'].deploy && fromJSON(inputs.manifest)['squid-reef-eu']['stacksdemo/squid-reef-eu'].deploy }}
-    uses: github.com/stacksphereio/core-workflows/.cloudbees/workflows/component-deploy.yaml@main
+    uses: github.com/stacksphereio/core-workflows/.cloudbees/workflows/component-deploy.yaml@feature/squidstack-release-implementation
     with:
       component_name: squid-reef-eu
       version: ${{ fromJSON(inputs.manifest)['squid-reef-eu']['stacksdemo/squid-reef-eu'].version }}
@@ -112,7 +112,7 @@ jobs:
 
   squid-feeds:
     if: ${{ fromJSON(inputs.manifest)['squid-feeds'].deploy && fromJSON(inputs.manifest)['squid-feeds']['stacksdemo/squid-feeds'].deploy }}
-    uses: github.com/stacksphereio/core-workflows/.cloudbees/workflows/component-deploy.yaml@main
+    uses: github.com/stacksphereio/core-workflows/.cloudbees/workflows/component-deploy.yaml@feature/squidstack-release-implementation
     with:
       component_name: squid-feeds
       version: ${{ fromJSON(inputs.manifest)['squid-feeds']['stacksdemo/squid-feeds'].version }}
@@ -129,7 +129,7 @@ jobs:
 
   squid-reef-na:
     if: ${{ fromJSON(inputs.manifest)['squid-reef-na'].deploy && fromJSON(inputs.manifest)['squid-reef-na']['stacksdemo/squid-reef-na'].deploy }}
-    uses: github.com/stacksphereio/core-workflows/.cloudbees/workflows/component-deploy.yaml@main
+    uses: github.com/stacksphereio/core-workflows/.cloudbees/workflows/component-deploy.yaml@feature/squidstack-release-implementation
     with:
       component_name: squid-reef-na
       version: ${{ fromJSON(inputs.manifest)['squid-reef-na']['stacksdemo/squid-reef-na'].version }}
@@ -146,7 +146,7 @@ jobs:
 
   squid-assets:
     if: ${{ fromJSON(inputs.manifest)['squid-assets'].deploy && fromJSON(inputs.manifest)['squid-assets']['stacksdemo/squid-assets'].deploy }}
-    uses: github.com/stacksphereio/core-workflows/.cloudbees/workflows/component-deploy.yaml@main
+    uses: github.com/stacksphereio/core-workflows/.cloudbees/workflows/component-deploy.yaml@feature/squidstack-release-implementation
     with:
       component_name: squid-assets
       version: ${{ fromJSON(inputs.manifest)['squid-assets']['stacksdemo/squid-assets'].version }}
@@ -163,7 +163,7 @@ jobs:
 
   squid-catalog:
     if: ${{ fromJSON(inputs.manifest)['squid-catalog'].deploy && fromJSON(inputs.manifest)['squid-catalog']['stacksdemo/squid-catalog'].deploy }}
-    uses: github.com/stacksphereio/core-workflows/.cloudbees/workflows/component-deploy.yaml@main
+    uses: github.com/stacksphereio/core-workflows/.cloudbees/workflows/component-deploy.yaml@feature/squidstack-release-implementation
     with:
       component_name: squid-catalog
       version: ${{ fromJSON(inputs.manifest)['squid-catalog']['stacksdemo/squid-catalog'].version }}
