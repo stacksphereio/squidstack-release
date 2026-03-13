@@ -9,10 +9,21 @@ on:
         required: true
         default: integ
         description: "Deployment environment (e.g. dev, integ, preprod, prod)"
+      smart_tests_component:
+        type: string
+        required: false
+        default: ""
+        description: "Component that triggered this release (for E2E test linking)"
+      smart_tests_build_name:
+        type: string
+        required: false
+        default: ""
+        description: "Smart Tests build name from component test job"
       manifest:
         type: string
-        required: true
-        description: "Release manifest with component versions (JSON)"
+        required: false
+        default: ""
+        description: "Release manifest (auto-injected by Unify from top-level manifest field)"
 
 metadata:
   stages/v1alpha1:
