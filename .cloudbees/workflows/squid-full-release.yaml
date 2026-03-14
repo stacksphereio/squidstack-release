@@ -50,7 +50,7 @@ jobs:
       docker_repo: stacksdemo/squid-auth
       artifact_id: ${{ fromJSON(inputs.manifest)['squid-auth']['stacksdemo/squid-auth'].id }}
       commit_sha: ${{ fromJSON(inputs.manifest)['squid-auth']['stacksdemo/squid-auth'].digest }}
-      database_mode: postgres
+      database_mode: deploy-postgres
       enable_liquibase: "true"
       feature_flags_enabled: true
     secrets: inherit
